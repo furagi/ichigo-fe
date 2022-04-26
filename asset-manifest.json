@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ichigo-fe/static/css/main.eae98d77.css",
+    "main.js": "/ichigo-fe/static/js/main.b2c1a658.js",
+    "static/js/787.b3215e1d.chunk.js": "/ichigo-fe/static/js/787.b3215e1d.chunk.js",
+    "index.html": "/ichigo-fe/index.html",
+    "main.eae98d77.css.map": "/ichigo-fe/static/css/main.eae98d77.css.map",
+    "main.b2c1a658.js.map": "/ichigo-fe/static/js/main.b2c1a658.js.map",
+    "787.b3215e1d.chunk.js.map": "/ichigo-fe/static/js/787.b3215e1d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eae98d77.css",
+    "static/js/main.b2c1a658.js"
+  ]
+}
