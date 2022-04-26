@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import './App.scss';
 
 function App() {
-  const [items, setItems] = useState([
+  const [colors, setColors] = useState([
     'rgb(1, 125, 219)',
     'rgb(232, 33, 78)',
     'rgb(130, 111, 81)',
@@ -14,13 +14,23 @@ function App() {
     'rgb(61, 92, 88)',
   ]);
 
+  const shuffleColors = useCallback(() => setColors((items) => {
+    const newItems = [...items];
+    for (let i = newItems.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newItems[i], newItems[j]] = [newItems[j], newItems[i]];
+    }
+    return newItems;
+  }), [setColors]);
+
   return (
     <div className="container">
-      {items.map((color, index) => (
+      {colors.map((color, index) => (
         <div
           className={`container__item container__item-${index + 1}`}
           key={color}
           style={{ backgroundColor: color }}
+          onClick={shuffleColors}
         >
           <span>
             {index + 1}
