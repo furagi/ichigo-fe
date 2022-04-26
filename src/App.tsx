@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
 
 function App() {
+  const [items, setItems] = useState([
+    'rgb(1, 125, 219)',
+    'rgb(232, 33, 78)',
+    'rgb(130, 111, 81)',
+    'rgb(180, 80, 87)',
+    'rgb(118, 0, 198)',
+    'rgb(0, 170, 149)',
+    'rgb(0, 112, 92)',
+    'rgb(92, 67, 253)',
+    'rgb(61, 92, 88)',
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="container">
+      {items.map((color, index) => (
+        <div
+          className={`container__item container__item-${index + 1}`}
+          key={color}
+          style={{ backgroundColor: color }}
         >
-          Learn React
-        </a>
-      </header>
+          <span>
+            {index + 1}
+          </span>
+        </div>
+      ))}
     </div>
   );
 }
